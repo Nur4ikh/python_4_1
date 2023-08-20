@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="data:image/png;base64,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">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Навбар</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ссылка</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Выпадающий список
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Действие</a></li>
+            <li><a class="dropdown-item" href="#">Другое действие</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Отключенная</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</body>
