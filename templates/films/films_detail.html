@@ -14,6 +14,8 @@
 <b>Страна: {{films_id.country}}</b>
 <br>
 <p>Жанр: {{films_id.genre}}</p>
+    <button><a href="/films/{{films_id.id}}/delete/">Delete</a></button>
+    <button><a href="/films/{{films_id.id}}/update/">Update</a></button>
 </center>
 </body>
 {% include 'films/footer.html' %}
