@@ -1,6 +1,5 @@
 {% include 'films/header.html' %}
 <body>
-<center>
 <p>Описание: {{films_id.description}}</p>
 <br>
 <strong>Цена сеанса: {{films_id.price}}</strong>
@@ -14,8 +13,28 @@
 <b>Страна: {{films_id.country}}</b>
 <br>
 <p>Жанр: {{films_id.genre}}</p>
+    {% for i in object.comment_object.all %}
+            <table border="1" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td>Оценка фильмов - {{i.Text}}</td>
+                    <td>Дата оценка - {{i.Created_at}}</td>
+                </tr>
+            </table>
+            <hr>
+            {% endfor %}
+
+    {% for l in object.reviews.all %}
+            <table border="1" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td>Комментария: - {{l.comment}}</td>
+                    <td>Оценка: - {{l.rate}}</td>
+                    <td>Дата оценки: - {{l.created_date}}</td>
+                </tr>
+            </table>
+            <hr>
+            {% endfor %}
+
     <button><a href="/films/{{films_id.id}}/delete/">Delete</a></button>
     <button><a href="/films/{{films_id.id}}/update/">Update</a></button>
-</center>
 </body>
 {% include 'films/footer.html' %}
