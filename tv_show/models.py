@@ -46,7 +46,7 @@ class Rating(models.Model):
 class Reviews(models.Model):
     stars = ((i, '*' * i) for i in range(1, 6))
     comment = models.CharField('Комментарий', max_length=500, null=True)
-    choice_film = models.ForeignKey(TvShow, on_delete=models.CASCADE, related_name='reviews', null=True)
+    choice_film = models.ForeignKey(TvShow, on_delete=models.CASCADE, related_name='review', null=True)
     rate = models.IntegerField('Оценка', choices=stars, null=True)
     created_date = models.DateField(auto_now_add=True, null=True)
 

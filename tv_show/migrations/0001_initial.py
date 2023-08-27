@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
                                      verbose_name='Оценка')),
                 ('created_date', models.DateField(auto_now_add=True, null=True)),
                 ('choice_film',
-                 models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='reviews',
+                 models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='review',
                                    to='films.films')),
             ],
         ),

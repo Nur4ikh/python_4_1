@@ -1,19 +1,19 @@
 {% include 'films/header.html' %}
 <body>
-<p>Описание: {{films_id.description}}</p>
+<p>Описание: {{object.description}}</p>
 <br>
-<strong>Цена сеанса: {{films_id.price}}</strong>
+<strong>Цена сеанса: {{object.price}}</strong>
 <br>
-<p>Год: {{films_id.year}}</p>
+<p>Год: {{object.year}}</p>
 <br>
-<p>Время: {{films_id.time}}h</p>
+<p>Время: {{object.time}}h</p>
 <br>
-<p>Отзывы: {{films_id.reviews}}</p>
+<p>Отзывы: {{object.reviews}}</p>
 <br>
-<b>Страна: {{films_id.country}}</b>
+<b>Страна: {{object.country}}</b>
 <br>
-<p>Жанр: {{films_id.genre}}</p>
-    {% for i in object.comment_object.all %}
+<p>Жанр: {{object.genre}}</p>
+{% for i in object.comment_object.all %}
             <table border="1" cellpadding="5" cellspacing="5">
                 <tr>
                     <td>Оценка фильмов - {{i.Text}}</td>
@@ -21,9 +21,9 @@
                 </tr>
             </table>
             <hr>
-            {% endfor %}
+{% endfor %}
 
-    {% for l in object.reviews.all %}
+{% for l in object.review.all %}
             <table border="1" cellpadding="5" cellspacing="5">
                 <tr>
                     <td>Комментария: - {{l.comment}}</td>
@@ -32,9 +32,9 @@
                 </tr>
             </table>
             <hr>
-            {% endfor %}
+{% endfor %}
 
-    <button><a href="/films/{{films_id.id}}/delete/">Delete</a></button>
-    <button><a href="/films/{{films_id.id}}/update/">Update</a></button>
+    <button><a href="/films_detail/{{object.id}}/delete/">Delete</a></button>
+    <button><a href="/films_detail/{{object.id}}/update/">Update</a></button>
 </body>
 {% include 'films/footer.html' %}

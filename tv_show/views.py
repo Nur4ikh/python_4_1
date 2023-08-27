@@ -64,7 +64,7 @@ class CreateFilmView(generic.CreateView):
     template_name = 'films/Reviews.html'
     form_class = forms.FilmViewForm
     queryset = models.Reviews.objects.all()
-    success_url = '/reviews/'
+    success_url = '/review/'
 
     def form_valid(self, form):
         print(form.cleaned_data)
