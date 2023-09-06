@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты</title>
+</head>
+<body>
+<div>
+    <ol>
+        {% for product in object_list %}
+        <h1>{{ product.title }}</h1>
+        <img src="{{ product.image.url }}" alt="продукты" width="350" height="240">
+        <p>Цена: {{ product.price }} сом</p>
+        <p>Теги:</p>
+        <ul>
+            {% for tag in product.tag.all %}
+            <li>{{ tag.name_tag }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ol>
+</div>
+</body>
+</html>

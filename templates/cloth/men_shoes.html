@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукты</title>
+</head>
+<body>
+<div>
+    <ol>
+        {% for i in object_list %}
+        <h1>{{i.title}}</h1>
+        <img src="{{i.image.url}}" alt="продукты" width="350" height="240">
+        <button><a href="/product_detail/{{i.id}}">Подробнее</a></button>
+        {% endfor %}
+    </ol>
+</div>
+</body>
+</html>
