@@ -1,4 +1,4 @@
 from django.contrib import admin
 from . import models
 
-admin.site.register(models.TvParser)
+admin.site.register(models.FilmParser)

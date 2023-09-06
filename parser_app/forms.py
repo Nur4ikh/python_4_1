@@ -1,19 +1,21 @@
 from django import forms
 from . import parser, models
 
+
 class ParserForm(forms.Form):
-    MEDIA_CHOISES = (
-        ('FILM_KG', 'FILMS_KG'),
+    MEDIA_CHOICES = (
+        ('FILMIX', 'FILMIX'),
     )
 
-    media_type = forms.ChoiceField(choices=MEDIA_CHOISES)
+    media_type = forms.ChoiceField(choices=MEDIA_CHOICES)
 
     class Meta:
-        fields = ['media_type']
-
+        fields = [
+            'media_type'
+        ]
 
     def parser_data(self):
-        if self.data['media_type'] == 'FILMS_KG':
+        if self.data['media_type'] == 'FILMIX':
             film_parser = parser.parser()
             for i in film_parser:
-                models.TvParser.objects.create(**i)
+                models.FilmParser.objects.create(**i)
